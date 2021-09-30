@@ -3,59 +3,55 @@ package HomeWork3.calks.additional;
 import HomeWork3.calks.api.ICalculator;
 
 public class CalculatorWithCounterAutoDecorator implements ICalculator {
-    CalculatorWithMemoryDecorator calculatorWithMemoryDecorator;
-    private long iCalculator = 0;
-    double result;
-    public CalculatorWithCounterAutoDecorator(CalculatorWithMemoryDecorator calc){
-        this.calculatorWithMemoryDecorator = calc;
+    private long countCalculator = 0;
+    private ICalculator iCalculator;
+
+    public CalculatorWithCounterAutoDecorator(ICalculator iCalculator) {
+        this.iCalculator = iCalculator;
+    }
+    public ICalculator getiCalculator() {
+        return this.iCalculator;
+    }
+    private void incrementCountCalculator(){
+    this.countCalculator++;
     }
 
     @Override
     public double plus(double a, double b) {
-        this.iCalculator++;
-        double result = a + b;
-        return result;
+        incrementCountCalculator();
+        return this.iCalculator.plus(a, b);
     }
     @Override
     public double minus(double a, double b) {
-        this.iCalculator++;
-        double result = a - b;
-        return result;
+        incrementCountCalculator();
+        return this.iCalculator.minus(a, b);
     }
     @Override
     public double mult(double a, double b) {
-        this.iCalculator++;
-        double result = a * b;
-        return result;
+        incrementCountCalculator();
+        return this.iCalculator.mult(a, b);
     }
     @Override
     public double div(double a, double b) {
-        this.iCalculator++;
-        double result = a / b;
-        return result;
+        incrementCountCalculator();
+        return this.iCalculator.div(a, b);
     }
     @Override
     public double exp(double a, int n) {
-        this.iCalculator++;
-        double result = Math.pow(a,n);
-        return result;
+        incrementCountCalculator();
+        return this.iCalculator.exp(a, n);
     }
     @Override
     public double modul(double a) {
-        this.iCalculator++;
-        double result = Math.abs(a);
-        return result;
+        incrementCountCalculator();
+        return this.iCalculator.modul(a);
     }
     @Override
     public double square(double a) {
-        this.iCalculator++;
-        double result = Math.sqrt(a);
-        return result;
+        incrementCountCalculator();
+        return this.iCalculator.square(a);
     }
-    public long getiCalculator() {
-        return this.iCalculator;
-    }
-    public double getResult(){
-        return result;
+    public long getCountCalculator() {
+        return this.countCalculator;
     }
 }

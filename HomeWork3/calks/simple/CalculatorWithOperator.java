@@ -30,10 +30,10 @@ public class CalculatorWithOperator implements ICalculator {
 
     public double modul(double a) {   // модуль числа
         if (a < 0){
-            a = a * (-1);
+            a = a * (-1);   // return -a;
         }
         else{
-            a = a;
+            a = a;  //  return a;
         }
         return a;
     }

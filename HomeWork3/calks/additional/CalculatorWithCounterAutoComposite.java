@@ -5,108 +5,108 @@ import HomeWork3.calks.simple.CalculatorWithMathExtends;
 import HomeWork3.calks.simple.CalculatorWithOperator;
 
 public class CalculatorWithCounterAutoComposite {
-    CalculatorWithOperator calculator1;
-    CalculatorWithMathCopy calculator2;
-    CalculatorWithMathExtends calculator3;
-    int CountOperation = 0;
+    private final CalculatorWithOperator calculator1;
+    private final CalculatorWithMathCopy calculator2;
+    private final CalculatorWithMathExtends calculator3;
+    private long countOperation = 0;
 
-    public CalculatorWithCounterAutoComposite(CalculatorWithOperator calculator) {this.calculator1 = calculator; }
-    public CalculatorWithCounterAutoComposite(CalculatorWithMathCopy calculator) {
-        this.calculator2 = calculator;
+    private void incrementCountOperation() {
+        this.countOperation++;
     }
+
+    public CalculatorWithCounterAutoComposite(CalculatorWithOperator calculator) {
+        this.calculator1 = calculator;
+        this.calculator2 = null;
+        this.calculator3 = null;
+    }
+
+    public CalculatorWithCounterAutoComposite(CalculatorWithMathCopy calculator) {
+        this.calculator1 = null;
+        this.calculator2 = calculator;
+        this.calculator3 = null;
+    }
+
     public CalculatorWithCounterAutoComposite(CalculatorWithMathExtends calculator) {
+        this.calculator1 = null;
+        this.calculator2 = null;
         this.calculator3 = calculator;
     }
-    public double plus (double a, double b){
-        double result = 0;
-        if(calculator1 != null){
-            result = calculator1.plus(a,b);
+
+    public double plus(double a, double b) {
+        incrementCountOperation();
+        if (this.calculator1 != null) {
+            return this.calculator1.plus(a, b);
+        } else if (this.calculator2 != null) {
+            return this.calculator2.plus(a, b);
+        } else {
+            return this.calculator3.plus(a, b);
         }
-        else if(calculator2 != null){
-            result = calculator2.plus(a, b);
-        }
-        else if(calculator3 != null){
-            result = calculator3.plus(a, b);
-        }
-        CountOperation++;
-        return result;
     }
+
     public double minus (double a, double b){
-        double result = 0;
-        if(calculator1 != null){
-            result = calculator1.minus(a,b);
+        incrementCountOperation();
+        if(this.calculator1 != null){
+            return this.calculator1.minus(a,b);
         }
-        else if(calculator2 != null){
-            result = calculator2.minus(a, b);
+        else if(this.calculator2 != null){
+            return this.calculator2.minus(a, b);
         }
-        else if(calculator3 != null){
-            result = calculator3.minus(a, b);
+        else {
+            return this.calculator3.minus(a, b);
         }
-        CountOperation++;
-        return result;
     }
     public double mult (double a, double b) {
-        double result = 0;
-        if (calculator1 != null) {
-            result = calculator1.mult(a, b);
-        } else if (calculator2 != null) {
-            result = calculator2.mult(a, b);
-        } else if (calculator3 != null) {
-            result = calculator3.mult(a, b);
+        incrementCountOperation();
+        if (this.calculator1 != null) {
+            return this.calculator1.mult(a, b);
+        } else if (this.calculator2 != null) {
+            return this.calculator2.mult(a, b);
+        } else {
+            return this.calculator3.mult(a, b);
         }
-        CountOperation++;
-        return result;
     }
     public double div (double a, double b) {
-        double result = 0;
-        if (calculator1 != null) {
-            result = calculator1.div(a, b);
-        } else if (calculator2 != null) {
-            result = calculator2.div(a, b);
-        } else if (calculator3 != null) {
-            result = calculator3.div(a, b);
+        incrementCountOperation();
+        if (this.calculator1 != null) {
+            return this.calculator1.div(a, b);
+        } else if (this.calculator2 != null) {
+            return this.calculator2.div(a, b);
+        } else {
+            return this.calculator3.div(a, b);
         }
-        CountOperation++;
-        return result;
     }
     public double modul (double a) {
-        double result = 0;
-        if (calculator1 != null) {
-            result = calculator1.modul(a);
-        } else if (calculator2 != null) {
-            result = calculator2.modul(a);
-        } else if (calculator3 != null) {
-            result = calculator3.modul(a);
+        incrementCountOperation();
+        if (this.calculator1 != null) {
+            return this.calculator1.modul(a);
+        } else if (this.calculator2 != null) {
+            return this.calculator2.modul(a);
+        } else {
+            return this.calculator3.modul(a);
         }
-        CountOperation++;
-        return result;
     }
     public double exp (double a, int b) {
-        double result = 0;
-        if (calculator1 != null) {
-            result = calculator1.exp(a, b);
-        } else if (calculator2 != null) {
-            result = calculator2.exp(a, b);
-        } else if (calculator3 != null) {
-            result = calculator3.exp(a, b);
+        incrementCountOperation();
+        if (this.calculator1 != null) {
+            return this.calculator1.exp(a, b);
+        } else if (this.calculator2 != null) {
+            return this.calculator2.exp(a, b);
+        } else {
+            return this.calculator3.exp(a, b);
         }
-        CountOperation++;
-        return result;
     }
     public double square (double a) {
-        double result = 0;
-        if (calculator1 != null) {
-            result = calculator1.square(a);
-        } else if (calculator2 != null) {
-            result = calculator2.square(a);
-        } else if (calculator3 != null) {
-            result = calculator3.square(a);
+        incrementCountOperation();
+        if (this.calculator1 != null) {
+            return this.calculator1.square(a);
+        } else if (this.calculator2 != null) {
+            return this.calculator2.square(a);
+        } else {
+            return this.calculator3.square(a);
         }
-        CountOperation++;
-        return result;
     }
     public long getCountOperation(){
-        return this.CountOperation;
+        return this.countOperation;
     }
 }
 

@@ -1,46 +1,55 @@
 package HomeWork3.calks.additional;
 
 import HomeWork3.calks.api.ICalculator;
-import HomeWork3.calks.simple.CalculatorWithMathExtends;
 
 public class CalculatorWithMemoryDecorator implements ICalculator {
-    CalculatorWithMathExtends calculatorWithMathExtends;
-    private long iCalculator = 0;
-    double result;
-    public CalculatorWithMemoryDecorator(CalculatorWithMathExtends calc) {
-        this.calculatorWithMathExtends = calc;
-    }
 
-    @Override
-    public double plus(double a, double b) {
-        this.iCalculator++;
-        return a + b;}
-    @Override
-    public double minus(double a, double b) {
-        this.iCalculator++;
-        return a - b;}
-    @Override
-    public double mult(double a, double b) {
-        this.iCalculator++;
-        return a * b;}
-    @Override
-    public double div(double a, double b) {
-        this.iCalculator++;
-        return a / b;}
-    @Override
-    public double exp(double a, int n) {
-        this.iCalculator++;
-        return Math.pow(a,n);}
-    @Override
-    public double modul(double a) {
-        this.iCalculator++;
-        return Math.abs(a);}
-    @Override
-    public double square(double a) {
-        this.iCalculator++;
-        return Math.sqrt(a);
+    private ICalculator iCalculator;
+    private double result;
+
+    public CalculatorWithMemoryDecorator(ICalculator iCalculator) {
+        this.iCalculator = iCalculator;
     }
-    public long getiCalculator() {
+    public ICalculator getiCalculator() {
         return this.iCalculator;
     }
+    public double getMemory() {
+        return this.result;
+    }
+    @Override
+    public double plus(double a, double b) {
+        this.result = this.iCalculator.plus(a, b);
+        return this.result;
+    }
+    @Override
+    public double minus(double a, double b) {
+        this.result = this.iCalculator.minus(a, b);
+        return this.result;
+    }
+    @Override
+    public double mult(double a, double b) {
+        this.result = this.iCalculator.mult(a, b);
+        return this.result;
+    }
+    @Override
+    public double div(double a, double b) {
+        this.result = this.iCalculator.div(a, b);
+        return this.result;
+    }
+    @Override
+    public double exp(double a, int n) {
+        this.result = this.iCalculator.exp(a, n);
+        return this.result;
+    }
+    @Override
+    public double modul(double a) {
+        this.result = this.iCalculator.modul(a);
+        return this.result;
+    }
+    @Override
+    public double square(double a) {
+        this.result = this.iCalculator.square(a);
+        return this.result;
+    }
+
 }

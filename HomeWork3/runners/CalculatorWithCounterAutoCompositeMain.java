@@ -13,7 +13,10 @@ public class CalculatorWithCounterAutoCompositeMain {
        CalculatorWithCounterAutoComposite cal3 = new CalculatorWithCounterAutoComposite(new CalculatorWithMathExtends());
 
        System.out.println(cal.plus(4.1, cal.plus(cal.mult(15,7), cal.exp(cal.div(28,5.0),2))));
-       System.out.println(cal2.plus(4.1, cal2.plus(cal.mult(15,7), cal2.exp(cal2.div(28,5.0),2))));
-       System.out.println(cal3.plus(4.1, cal3.plus(cal.mult(15,7), cal3.exp(cal3.div(28,5.0),2))));
+       System.out.println(cal2.plus(4.1, cal2.plus(cal2.mult(15,7), cal2.exp(cal2.div(28,5.0),2))));
+       System.out.println(cal3.plus(4.1, cal3.plus(cal3.mult(15,7), cal3.exp(cal3.div(28,5.0),2))));
+       System.out.println("Количество использований = " + cal.getCountOperation());
+       System.out.println("Количество использований = " + cal2.getCountOperation());
+       System.out.println("Количество использований = " + cal3.getCountOperation());
     }
 }
