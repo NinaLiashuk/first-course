@@ -1,4 +1,4 @@
-package HomeWork3.calks;
+package HomeWork3.runners;
 
 import java.util.Scanner;               // 4.1 + 15 * 7 + (28 / 5) ^ 2.
 
