@@ -1,8 +1,8 @@
-package HomeWork2.Loops;
+package HomeWork2.loops;
 
 import java.util.Scanner;
 
-public class VozvedenieStepen_1_1_3 {
+public class Zadanie3 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите число");
@@ -18,4 +18,3 @@ public class VozvedenieStepen_1_1_3 {
         System.out.println(a + " ^ " + n + " = " + f);
     }
 }
-// Сделано

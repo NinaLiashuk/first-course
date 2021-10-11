@@ -1,11 +1,13 @@
-package HomeWork2.Arrays;
+package HomeWork2.arrays;
+
+import HomeWork2.utils.ArraysUtils;
 
 import java.util.Arrays;
 
-public class ArrayRandom2_2_4 {
+public class ArrayRandom {
     public static void main(String[] args) {
 // Сумма четных положительных элементов массива
-        int[] container = ArraysUtils2_2_1.arrayRandom(5, 15);
+        int[] container = ArraysUtils.arrayRandom(5, 15);
         int sum = 0;
         System.out.println(Arrays.toString(container));
         for (int i = 0; i < container.length; i++) {
@@ -17,7 +19,7 @@ public class ArrayRandom2_2_4 {
         System.out.println();
 
 //Максимальный из элементов массива с четными индексами
-        int[] container1 = ArraysUtils2_2_1.arrayRandom(8, 80);
+        int[] container1 = ArraysUtils.arrayRandom(8, 80);
         System.out.println(Arrays.toString(container1));
         int max = 0;
         for (int i = 0; i < container1.length; i += 2) {
@@ -29,7 +31,7 @@ public class ArrayRandom2_2_4 {
         System.out.println();
 
   // Элементы массива, которые меньше среднего арифметического
-        int[] container2 = ArraysUtils2_2_1.arrayRandom(7, 50);
+        int[] container2 = ArraysUtils.arrayRandom(7, 50);
         System.out.println(Arrays.toString(container2));
         int sum2 = 0;
         for (int i = 0; i < container2.length; i++) {
@@ -48,7 +50,7 @@ public class ArrayRandom2_2_4 {
         System.out.println();
 
         //Найти два наименьших (минимальных) элемента массива
-        int[] container3 = ArraysUtils2_2_1.arrayRandom(7, 30);
+        int[] container3 = ArraysUtils.arrayRandom(7, 30);
         System.out.println(Arrays.toString(container3));
         int b;
         for (int i = 0; i < container3.length; i++) {
@@ -67,7 +69,7 @@ public class ArrayRandom2_2_4 {
         System.out.println();
 
         //Сжать массив, удалив элементы, принадлежащие интервалу
-        int[] container4 = ArraysUtils2_2_1.arrayRandom(7, 30);
+        int[] container4 = ArraysUtils.arrayRandom(7, 30);
         System.out.println(Arrays.toString(container4));
         // Будем удалять элементы, попадающие в интервал от 15 до 25
         int j;
@@ -87,7 +89,7 @@ public class ArrayRandom2_2_4 {
         System.out.println();
 
         //Сумма цифр массива
-        int[] container5 = ArraysUtils2_2_1.arrayRandom(7, 212);
+        int[] container5 = ArraysUtils.arrayRandom(7, 212);
         System.out.println(Arrays.toString(container5));
         int y;
         int sumy = 0;

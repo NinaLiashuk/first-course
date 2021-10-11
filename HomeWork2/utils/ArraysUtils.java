@@ -1,8 +1,8 @@
-package HomeWork2.Arrays;
+package HomeWork2.utils;
 import java.util.Random;
 import java.util.Scanner;
 
-public class ArraysUtils2_2_1 {
+public class ArraysUtils {
 
     public static int[] arrayFromConsole() {
 
@@ -28,4 +28,3 @@ public class ArraysUtils2_2_1 {
     }
 }
 
-//Сделано

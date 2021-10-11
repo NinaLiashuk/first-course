@@ -1,4 +1,4 @@
-package HomeWork2.Loops;
+package HomeWork2.loops;
 //вероятности выпадения четных чисел на выборке не меньше 1000 случайных чисел
 public class GeneratorChisel {
     public static void main(String[] args) {

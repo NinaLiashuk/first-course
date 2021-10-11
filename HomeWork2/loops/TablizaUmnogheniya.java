@@ -1,6 +1,6 @@
-package HomeWork2.Loops;
+package HomeWork2.loops;
 // Вывести таблицу умножения на консоль
-public class TablizaUmnogheniya1_5 {
+public class TablizaUmnogheniya {
     public static void main(String[] args) {
 
         int i = 1;

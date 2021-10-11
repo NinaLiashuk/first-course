@@ -1,14 +1,14 @@
-package HomeWork2.Sorts;
+package HomeWork2.sorts;
 
 //Отсортировать массив, заполненный случайными числами, по возрастанию. Для сортировки использовать метод «пузырька».
 // Вывести на экран массив в исходном и отсортированном виде.
 
-import HomeWork2.Arrays.ArraysUtils2_2_1;
+import HomeWork2.utils.ArraysUtils;
 import java.util.Arrays;
 
-public class Puzyrek {
-    public static void main(String[] args) {
-        int[] arr = ArraysUtils2_2_1.arrayRandom(5, 35);
+public class Bubbles {
+    public static void bubblesSort (String[] args) {
+        int[] arr = ArraysUtils.arrayRandom(5, 35);
         System.out.println(Arrays.toString(arr));
 
         for (int i = 0; i < arr.length; i++) {
@@ -21,7 +21,7 @@ public class Puzyrek {
             }
         }
         for (int i : arr) {
-            System.out.print(i + "  ");
+        System.out.print(i + "  ");
         }
     }
 }

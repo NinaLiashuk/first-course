@@ -1,4 +1,4 @@
-package HomeWork2.Loops;
+package HomeWork2.loops;
 // С клавы вводится число
 //Посчитать его четные и нечетные цифры
 
@@ -21,9 +21,9 @@ public class ChetINechet {
                     count1++;
                 if (i % 2 != 0)
                     count2++;
-    }
+        }
         System.out.println("В числе " + count2 + " нечетных цифр ");
-        System.out.println("В числе " + count1 + " четных цифр ");}
+        System.out.println("В числе " + count1 + " четных цифр ");
+    }
 }
 
-       //Сделано

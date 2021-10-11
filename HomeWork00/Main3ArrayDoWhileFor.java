@@ -1,17 +1,18 @@
-package HomeWork2.Arrays;
+package HomeWork2.arrays;
 
 // Вывод в консоль всех элементов массива в обратном порядке с помощью циклов do....while, while, for, foreach
 
+import HomeWork2.utils.ArraysUtils;
+
 public class Main3ArrayDoWhileFor {
     public static void main(String[] args) {
-        int[] container1 = ArraysUtils2_2_1.arrayFromConsole();
+        int[] container1 = ArraysUtils.arrayFromConsole();
 
         int i = container1.length;
         do {
             System.out.print(container1[i - 1] + "  "); //-
             i--;
-        }
-        while (i > 0);
+        } while (i > 0);
         System.out.println();
 
         int n = container1.length;
@@ -33,16 +34,3 @@ public class Main3ArrayDoWhileFor {
         }
     }
 }
-// Сделано
-
-
-
-
-
-
-      //  System.out.println(Arrays.toString(container1));
-
-
-
-
-//Сделано

@@ -1,18 +1,19 @@
-package HomeWork2.Arrays;
+package HomeWork2.arrays;
 
 // Вывод в консоль каждый второй элемент массива с помощью циклов do....while, while, for, foreach
 
+import HomeWork2.utils.ArraysUtils;
+
 public class Main2ArrayDoWhileFor {
     public static void main(String[] args) {
-        int[] container1 = ArraysUtils2_2_1.arrayFromConsole();
+        int[] container1 = ArraysUtils.arrayFromConsole();
         int i = 0;
 
         do {
             i++;
             System.out.print(container1[i] + "  ");
             i++;
-        }
-        while (i < container1.length - 1);
+        } while (i < container1.length - 1);
         System.out.println();
 
         i = 0;
@@ -38,5 +39,5 @@ public class Main2ArrayDoWhileFor {
         }
     }
 }
-// Сделано
+
 

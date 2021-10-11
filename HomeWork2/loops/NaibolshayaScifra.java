@@ -1,4 +1,4 @@
-package HomeWork2.Loops;
+package HomeWork2.loops;
 // С клавы вводится число
 //Найти его наибольшую цифру
 
@@ -20,4 +20,4 @@ public class NaibolshayaScifra {
         }
         System.out.print("Наибольшее число " + i);
     }
-}          //Сделано
+}

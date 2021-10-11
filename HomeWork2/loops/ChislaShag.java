@@ -1,4 +1,4 @@
-package HomeWork2.Loops;
+package HomeWork2.loops;
 
 import java.util.Scanner;
 
@@ -25,4 +25,3 @@ public class ChislaShag {
             return;
     }
 }
-              //Сделано

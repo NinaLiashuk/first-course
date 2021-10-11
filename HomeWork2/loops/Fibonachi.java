@@ -1,4 +1,4 @@
-package HomeWork2.Loops;
+package HomeWork2.loops;
 // С клавы вводится число
 //Найти его наибольшую цифру
 
@@ -22,4 +22,4 @@ public class Fibonachi {
             f2 = b + f1;
         }
     }
-}             //Сделано
+}
