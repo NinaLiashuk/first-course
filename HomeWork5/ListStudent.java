@@ -1,7 +1,8 @@
 package HomeWork5;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -13,7 +14,15 @@ public class ListStudent {
         ThreadLocalRandom random = ThreadLocalRandom.current();
         for (int i = 0; i < 1000; i++) {
             int studentsNumber = random.nextInt(1000, 9999);
-            String studentName = MethodStringName.stringName();
+            String studentName = null;                            // рандомное имя из файла
+            try {
+                studentName = MethodReaderName.nameFromFile();
+            } catch (FileNotFoundException e) {
+                System.out.println(e.getMessage());
+            }
+
+     //     String studentName = MethodStringName.stringName();  //  имя из рандомных символов (почти как настоящее)) )
+
             int studentsAge = random.nextInt(7, 17);
             double studentsMark = MethodDoubleMark.mark();
             boolean studentsOlimp = random.nextBoolean();

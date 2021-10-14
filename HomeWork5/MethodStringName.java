@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Random;
 import java.lang.String;
 
+// метод для вывода рандомного имени из русских букв, где первая заглавная, остальные строчные
+
 public class MethodStringName {
 
     public static String stringName() {
