@@ -1,19 +1,21 @@
 package HomeWork6.runners;
 
 import HomeWork6.EasySearch;
+import HomeWork6.MethodGetName;
 import HomeWork6.api.ISearchEngine;
 
-// C:\Users\JD1\WarAndPease.txt
 public class EasySearchMain {
 
     public static void main(String[] args){
+        MethodGetName methodGetName = new MethodGetName();
+        String text = methodGetName.readFile("WarAndPease.txt"); //.toLowerCase(Locale.ROOT);
         ISearchEngine iSearchEngine = new EasySearch();
-        System.out.print("Слово 'война' ");
-        iSearchEngine.search("", "война");         // 48
-        System.out.print("Слово 'и' ");
-        iSearchEngine.search("", "и");             // 14575
-        System.out.print("Слово 'мир' ");
-        iSearchEngine.search("", "мир");           // 31
 
-       }
+        long result = iSearchEngine.search(text, "война");        // 45        48
+        System.out.println(result);
+        long result1 = iSearchEngine.search(text, "и");           // 13873     14576
+        System.out.println(result1);
+        long result2 = iSearchEngine.search(text, "мир");         // 31        31
+        System.out.println(result2);
     }
+}

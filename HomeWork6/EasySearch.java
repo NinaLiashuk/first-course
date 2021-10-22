@@ -2,26 +2,15 @@ package HomeWork6;
 
 import HomeWork6.api.ISearchEngine;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Locale;
-
 public class EasySearch implements ISearchEngine {
 
     @Override
     public long search(String text, String word){
-        try {
-            text = new String(Files.readAllBytes(Paths.get("Akula.txt")));
-            text = text.toLowerCase(Locale.ROOT);
-        } catch (IOException e) {
-            throw new RuntimeException("Некорректное чтение файла", e);
-        }
+        System.out.print("Подсчет слова из класса EasySearch: " + word + " = ");
         int count = 0;
         int value;
         int previousValue = 0;
-        String[] char5 = new String[]{" ", ",", ".", ";", ":", "!", "?", "«", "(", ")","»", "\n"};
-
+        String[] char5 = new String[]{" ", ",", ".", ";", ":", "!", "?", "«", "(", ")","»", "--","\n"};
         do {
             value = text.indexOf(word, previousValue);
             if (value < 0) {
@@ -32,6 +21,7 @@ public class EasySearch implements ISearchEngine {
                 for (String s : char5) {
                     if (symbol.equals(s)) {
                         count++;
+                        break;
                     //    System.out.println(word + " : индекс входа " + value);
                     }
                 }

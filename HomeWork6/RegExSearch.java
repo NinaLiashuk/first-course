@@ -14,19 +14,11 @@ public class RegExSearch implements ISearchEngine {
 
     @Override
     public long search(String text, String word) {
-        try {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Введите путь и имя файла");
-            String path = scanner.nextLine();
-            text = new String(Files.readAllBytes(Paths.get(path)));
-        } catch (IOException e) {
-            throw new RuntimeException("Некорректное чтение файла", e);
-        }
-        
-        Pattern pattern = Pattern.compile(word);
-        Matcher matcher = pattern.matcher(text);           // Поиск с учетом регистра
-      //  Matcher matcher = pattern.matcher(text.toLowerCase(Locale.ROOT));
-        int count = 0;
+        System.out.print("Посчет слова из класса RegExSearch: " + word + " = ");
+        String redex = "\\b" + word + "\\b";
+        Pattern pattern = Pattern.compile(redex, Pattern.UNICODE_CASE);
+        Matcher matcher = pattern.matcher(text);
+        long count = 0;
         while (matcher.find()){
             count++;
         }

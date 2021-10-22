@@ -4,5 +4,11 @@ package HomeWork6.api;
 //        Первый параметр текст в котором ищем, второй параметр что ищем в тексте.
 
 public interface ISearchEngine {
+    /**
+     * Поиск слова по тексту
+     * @param text текст по которому ищем
+     * @param word слово которое ищем
+     * @return количество найденных совпадений
+     */
     long search (String text, String word);
 }
